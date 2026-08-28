@@ -1,10 +1,17 @@
 //import { useState } from "react";
+import { Route, Routes } from "react-router";
 import "./App.css";
+import ProviderLayout from "./layout/ProviderLayout";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl text-blue-500 font-bold underline">Hello world!</h1>
+      <Routes>
+        <Route element={<ProviderLayout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
     </>
   );
 }
