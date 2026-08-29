@@ -1,0 +1,50 @@
+[
+  {
+    "id": "shoe-001",
+    "name": "Air Runner",
+    "brand": "Nike",
+    "price": 120,
+    "currency": "USD",
+    "category": "Running",
+    "sizes": [39, 40, 41, 42, 43],
+    "color": "Black",
+    "description": "Lightweight running shoes for everyday training.",
+    "stock": 25
+  },
+  {
+    "id": "shoe-002",
+    "name": "Classic Leather",
+    "brand": "Adidas",
+    "price": 100,
+    "currency": "USD",
+    "category": "Casual",
+    "sizes": [40, 41, 42, 43, 44],
+    "color": "White",
+    "description": "Classic leather sneakers with a clean design.",
+    "stock": 15
+  },
+  {
+    "id": "shoe-003",
+    "name": "Street Pro",
+    "brand": "Puma",
+    "price": 85,
+    "currency": "USD",
+    "category": "Lifestyle",
+    "sizes": [39, 40, 41, 42],
+    "color": "Red",
+    "description": "Stylish sneakers designed for everyday wear.",
+    "stock": 30
+  },
+  {
+    "id": "shoe-004",
+    "name": "Mountain Trail",
+    "brand": "New Balance",
+    "price": 140,
+    "currency": "USD",
+    "category": "Hiking",
+    "sizes": [41, 42, 43, 44, 45],
+    "color": "Brown",
+    "description": "Durable shoes designed for hiking and outdoor activities.",
+    "stock": 10
+  }
+]
