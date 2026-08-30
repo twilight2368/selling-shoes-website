@@ -1,5 +1,6 @@
 import shoeImage from "../assets/shoe.png";
 import type { Shoe } from "../types/shoe";
+import { Button } from "@heroui/react";
 
 interface ShoeCardProps {
   shoe: Shoe;
@@ -39,20 +40,21 @@ export default function ShoeCard({ shoe }: ShoeCardProps) {
 
         <div className="flex flex-wrap gap-2">
           {shoe.sizes.map((size) => (
-            <button
+            <Button
               key={size}
+              variant="ghost"
               className="rounded-md border border-gray-300 px-3 py-1.5 text-sm hover:border-black hover:bg-black hover:text-white"
             >
               {size}
-            </button>
+            </Button>
           ))}
         </div>
       </div>
 
       {/* Add to cart */}
-      <button className="mt-5 w-full rounded-lg bg-black py-2.5 text-sm font-medium text-white transition hover:bg-gray-800">
+      <Button className="mt-5 w-full rounded-lg bg-black py-2.5 text-sm font-medium text-white transition hover:bg-gray-800">
         Add to Cart
-      </button>
+      </Button>
     </div>
   );
 }

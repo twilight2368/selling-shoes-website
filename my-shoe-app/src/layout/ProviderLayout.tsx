@@ -5,7 +5,9 @@ export default function ProviderLayout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="w-full pt-20">
+        <Outlet />
+      </div>
     </>
   );
 }
