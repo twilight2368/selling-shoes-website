@@ -30,7 +30,7 @@ export interface OrderItem {
 }
 
 export interface Order {
-  id: string;
+  id: string; 
   items: OrderItem[];
   totalItems: number;
   totalPrice: number;
