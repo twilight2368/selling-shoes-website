@@ -26,14 +26,13 @@ export interface OrderItem {
   size: number;
   color: string;
   quantity: number;
-  subtotal: number;
 }
 
 export interface Order {
-  id: string; 
+  id: string;
   items: OrderItem[];
   totalItems: number;
   totalPrice: number;
-  status: "pending" | "paid" | "shipped" | "delivered" | "cancelled";
-  createdAt: string;
+  order_status: "pending" | "paid" | "shipped" | "delivered" | "cancelled";
+  createdAt?: string;
 }

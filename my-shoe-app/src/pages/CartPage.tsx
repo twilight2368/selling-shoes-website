@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { Button } from "@heroui/react";
+
 import CartItem from "../components/CartItem";
 import useCart from "../hooks/useCart";
+import useOrder from "../hooks/useOrder";
 
 export default function CartPage() {
-  const { cart, removeFromCart } = useCart();
+  const navigate = useNavigate();
+
+  const { cart, removeFromCart, clearCart } = useCart();
+  const { addOrder } = useOrder();
+
+  const [placingOrder, setPlacingOrder] = useState(false);
+
+  const handlePlaceOrder = async () => {
+    if (cart.items.length === 0) return;
+
+    try {
+      setPlacingOrder(true);
+
+      await addOrder({
+        totalItems: cart.totalItems,
+        totalPrice: cart.totalPrice,
+        status: "pending",
+        items: cart.items.map((item) => ({
+          shoeId: item.shoeId,
+          name: item.name,
+          brand: item.brand,
+          price: item.price,
+          quantity: item.quantity,
+          size: item.size,
+          color: item.color,
+        })),
+      });
+
+      // Clear cart after order is successfully created
+      clearCart();
+
+      // Go to order history
+      navigate("/order");
+    } catch (error) {
+      console.error("Failed to place order:", error);
+    } finally {
+      setPlacingOrder(false);
+    }
+  };
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-8">
@@ -45,12 +87,13 @@ export default function CartPage() {
             </div>
           </div>
 
-          <button
-            disabled={cart.items.length === 0}
+          <Button
+            isDisabled={cart.items.length === 0 || placingOrder}
+            onPress={handlePlaceOrder}
             className="mt-6 w-full rounded-lg bg-black py-3 font-medium text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-300"
           >
-            Place Order
-          </button>
+            {placingOrder ? "Placing Order..." : "Place Order"}
+          </Button>
         </div>
       </div>
     </main>

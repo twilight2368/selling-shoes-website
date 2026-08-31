@@ -1,5 +1,5 @@
 import logo from "../assets/shoe.svg";
-import { Button, Input } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { FaShoppingCart, FaHistory } from "react-icons/fa";
 import { useNavigate } from "react-router";
 export default function Header() {
@@ -18,12 +18,12 @@ export default function Header() {
         />
 
         <div className=" flex items-center gap-4">
-          <Input
+          {/* <Input
             aria-label="Shoe Name"
             variant="secondary"
             className="w-80"
             placeholder="Enter shoe name"
-          />
+          /> */}
           <Button
             isIconOnly
             variant="ghost"

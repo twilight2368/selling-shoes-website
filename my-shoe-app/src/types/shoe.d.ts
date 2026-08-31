@@ -7,6 +7,5 @@ export type Shoe = {
   category: string;
   sizes: number[];
   color: string;
-  description: string;
   stock: number;
 };

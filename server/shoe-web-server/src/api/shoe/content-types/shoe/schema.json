@@ -10,5 +10,34 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "enumeration",
+      "enum": [
+        "adidas",
+        "nike"
+      ]
+    },
+    "price": {
+      "type": "integer"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "sizes": {
+      "type": "json"
+    },
+    "color": {
+      "type": "string"
+    },
+    "stock": {
+      "type": "integer"
+    }
+  }
 }

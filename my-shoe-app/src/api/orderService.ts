@@ -3,7 +3,7 @@ import type { Order, OrderItem } from "../types/order";
 const API_URL = import.meta.env.VITE_API_URL + "/api/orders";
 
 export async function getOrders(): Promise<Order[]> {
-  const response = await fetch(`${API_URL}?populate=items`);
+  const response = await fetch(`${API_URL}`);
 
   if (!response.ok) {
     throw new Error("Failed to fetch orders");
@@ -33,7 +33,7 @@ export async function getOrderById(id: string): Promise<Order | null> {
 interface CreateOrderData {
   totalItems: number;
   totalPrice: number;
-  status: Order["status"];
+  status: Order["order_status"];
   items: Omit<OrderItem, "id">[];
 }
 
@@ -47,7 +47,7 @@ export async function createOrder(order: CreateOrderData): Promise<Order> {
       data: {
         totalItems: order.totalItems,
         totalPrice: order.totalPrice,
-        status: order.status,
+        order_status: order.status,
         items: order.items,
       },
     }),

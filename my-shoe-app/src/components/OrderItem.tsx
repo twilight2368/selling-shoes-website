@@ -33,8 +33,6 @@ export default function OrderItem({ item }: OrderItemProps) {
 
       {/* Price */}
       <div className="text-right">
-        <p className="font-semibold text-gray-900">${item.subtotal}</p>
-
         <p className="text-sm text-gray-500">${item.price} each</p>
       </div>
     </div>
